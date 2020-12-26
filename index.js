@@ -10,8 +10,12 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+	res.send("Hello World, This a API made for Brainstation")
+});
 app.use(userRouter);
-// app.use(postRouter);
+app.use(postRouter);
 
 const port = process.env.PORT || 8080;
 app.listen(process.env.PORT || 8080, () => {

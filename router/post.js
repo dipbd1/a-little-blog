@@ -1,7 +1,7 @@
 const express = require('express');
 const Post = require('../models/post');
-const router = new express.Router();
 const auth = require('../middleware/auth');
+const router = new express.Router();
 
 //Route to create a Post
 router.post('/posts', auth, async (req, res) => {
@@ -148,4 +148,4 @@ router.patch('/posts/downvote/:id', async (req, res)=>{
 	}
 })
 
-module.export = router;
+module.exports = router;
